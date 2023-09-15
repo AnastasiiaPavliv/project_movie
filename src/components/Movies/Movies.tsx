@@ -24,28 +24,35 @@ const Movies: FC<IProps> = () => {
      const {movies, movieSearch, movieFilter}=useAppSelector(state => state.moviesReducer)
     const [query, setQuery] = useSearchParams({page: '1'})
 
-useEffect(()=>{
-    if(movieSearch && genreId){
-        dispatch(moviesActions.getAll({page: query.get('page')}));
-        setQuery(prev => ({...prev, page: prev.get('page')}));
-    }else if (movieSearch) {
-        moviesService.getKeyword(movieSearch, query.get('page')).then(({data}) => {
-            if (data.results.length) {
-                dispatch(moviesActions.setMovies(data));
+    useEffect(() => {
+        if (genreMovies){
+            dispatch(moviesActions.setMovies(genreMovies))
+        }
+    }, [genreMovies]);
+
+    useEffect(() => {
+        if (!movieSearch && !genreId) {
+            dispatch(moviesActions.getAll({id: query.get('page')}));
+            setQuery(prev => ({...prev, page: prev.get('page')}));
+
+        } else if (movieSearch) {
+            moviesService.getKeyword(movieSearch, query.get('page')).then(({data}) => {
+                if (data.results.length) {
+                    dispatch(moviesActions.setMovies(data));
+                } else {
+                    navigate('/movies?page=1');
+                    dispatch(moviesActions.setSearch(null));
+                }
+            })
+        } else if (genreId) {
+            if (genreId) {
+                dispatch(genreActions.getByGenre({id: genreId, page: query.get('page')}));
             } else {
                 navigate('/movies?page=1');
                 dispatch(moviesActions.setSearch(null));
             }
-        })
-    } else if (genreId) {
-        if (genreId) {
-            dispatch(genreActions.getByGenre({id: genreId, page: query.get('page')}));
-        } else {
-            navigate('/movies?page=1');
-            dispatch(moviesActions.setSearch(null));
         }
-    }
-},  [query, movieSearch, genreId])
+    }, [query, movieSearch, genreId]);
 
     // useEffect(()=>{
     //      dispatch(moviesActions.getAll({page:query.get('page')}));
@@ -60,7 +67,7 @@ useEffect(()=>{
     return (
         <div className={css.movies}>
             {
-                !genreId && ! movieFilter.length ?
+                !genreId &&  !movieFilter.length ?
                     movies.results.map(movie => <Movie key={movie.id} movie={movie}/>) :
                     genreMovies ?
                         genreMovies.results.map(movie => <Movie key={movie.id} movie={movie}/>) :

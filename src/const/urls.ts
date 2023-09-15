@@ -1,7 +1,7 @@
 const baseURL=process.env.REACT_APP_API
 
 const urls={
-    moviesPage:(page:string)=>`/discover/movie?page=${page}`,
+    moviesPage:(id:string)=>`/discover/movie?page=${id}`,
     movieById:(id:string)=>`/movie/${id}`,
     genres:'/genre/movie/list',
     keyword: (keyword: string, id: string): string => `/search/movie?query=${keyword}&page=${id}`,

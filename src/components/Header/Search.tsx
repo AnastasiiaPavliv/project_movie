@@ -17,11 +17,11 @@ const Search = () => {
 
     const{reset,register, handleSubmit}=useForm({mode:'all'})
     const {genreId} = useAppSelector(state => state.genreReducer)
-    const {pathname} = useLocation()
+    // const {pathname} = useLocation()
 
 
     const save=(movie:ISearch)=>{
-        nav('/movie?page=1');
+        nav('/movies?page=1');
         dispatch(moviesActions.setSearch(movie.mSearch));
         reset()
     }

@@ -11,7 +11,7 @@ const AppPagination = () => {
     const handleChangePage=(event:React.ChangeEvent<unknown>, value:number)=>{
         setQuery(prev => ({...prev, page:value}))
     };
-    const pageCount=Math.min(movies.total_pages || 500, 500);
+    const pageCount=Math.min(movies.total_pages || 500);
 
     useEffect(() => {
         // При зміні сторінки прокрутити до верхньої частини сторінки
