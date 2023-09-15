@@ -1,9 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
-// import {carReducer} from "./slice/carSlice";
+import {moviesReducer} from "./slices/moviesSlice";
+import {themeReducer} from "./slices/themeSlice";
+import {genreReducer} from "./slices/genreSlice";
 
 const store= configureStore({
     reducer:{
-
+        moviesReducer,
+       themeReducer,
+         genreReducer
     }
 })
 

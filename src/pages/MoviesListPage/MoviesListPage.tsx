@@ -1,15 +1,14 @@
-import {FC, PropsWithChildren} from 'react';
-import {Movies} from "../../components";
+import {AppPagination, Movies} from "../../components";
+import css from './MoviesListPage.module.css'
 
-interface IProps extends PropsWithChildren {
 
-}
-
-const MoviesListPage: FC<IProps> = () => {
+const MoviesListPage = () => {
     return (
-        <div>
-            MoviesList
-           <Movies/>
+        <div >
+         <Movies results={[]}/>
+            <div className={css.page}>
+                <AppPagination/>
+        </div>
         </div>
     );
 };

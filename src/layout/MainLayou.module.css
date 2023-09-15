@@ -1,0 +1,7 @@
+.theme {
+    background: rgb(149, 166, 186);
+    background: radial-gradient(circle, rgba(149, 166, 186, 0.8901623637736344) 34%, rgba(8, 76, 154, 0.7949242685355392) 61%);
+}
+body{
+    background: rgb(254,187,216);
+    background: radial-gradient(circle, rgba(254,187,216,1) 11%, rgba(148,187,233,1) 100%);}

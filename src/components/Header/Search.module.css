@@ -1,0 +1,14 @@
+.field{
+width: 100px;
+    border-radius: 10%;
+}
+.field[type="text"] {
+    width: 200px;
+    height: 30px;
+    transition: width 0.3s ease; /* Анімація зміни розміру */
+}
+
+/* Стиль поля вводу при фокусі */
+.field[type="text"]:focus {
+    width: 300px; /* Новий розмір при фокусі */
+}

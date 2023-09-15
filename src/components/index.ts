@@ -1,4 +1,6 @@
 export * from './Movie/Movie'
 export * from './Movies/Movies'
 export * from './Header/Header'
-//export * from './Header/Header.module.css'
+export * from './Header/Header.module.css'
+export * from './Pagination/AppPaggination'
+export * from './MovieInfo/MovieInfo'

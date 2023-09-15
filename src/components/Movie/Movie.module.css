@@ -1,0 +1,24 @@
+.main{
+    width: 18%;
+    max-height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    z-index: 3;
+    transition: 0.50s;
+    padding: 10px;
+    font-family:"Book Antiqua", sans-serif;
+    font-size:large;
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+}
+img{
+    width: 210px;
+}
+.main:hover{
+    transform: scale(1.1);
+    transition: 0.50s;
+}

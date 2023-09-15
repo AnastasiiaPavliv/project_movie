@@ -1,6 +1,5 @@
 import axios, {AxiosResponse} from "axios";
 import {baseURL} from "../const";
-import {access} from "fs";
 
 type IRes<DATA>=Promise<AxiosResponse<DATA>>
 

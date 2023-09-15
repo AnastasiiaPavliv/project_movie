@@ -1,0 +1,56 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Контейнер для фільму */
+.container {
+    width: 70%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #BDABFB;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top:100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Заголовок фільму */
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Consolas, sans-serif;;
+}
+
+/* Опис фільму */
+.description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: Consolas, sans-serif;;
+}
+
+/* Деталі про фільм, наприклад, рік випуску */
+.details {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* Зображення фільму */
+.poster {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.text{
+    font-family: Consolas, sans-serif;
+    padding-left: 20px;
+}
+.img{
+    width: 400px;
+}

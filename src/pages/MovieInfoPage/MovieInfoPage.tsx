@@ -1,13 +1,14 @@
-import {FC, PropsWithChildren} from 'react';
+import {MovieInfo} from "../../components";
+import React from 'react';
+import {IMovie} from "../../interface/moviesInterface";
 
-interface IProps extends PropsWithChildren {
 
-}
 
-const MovieInfoPage: FC<IProps> = () => {
+
+const MovieInfoPage = () => {
     return (
         <div>
-            MovieInfoPage
+            <MovieInfo />
         </div>
     );
 };
